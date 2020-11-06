@@ -1,0 +1,18 @@
+body {
+    background-color: #ecf0f1;
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+h1, pre {
+    color: #34495e;
+    font-size: 200%;
+    transition: color 0.5s ease-in-out;
+}
+
+.clicked {
+    color: #95a5a6;
+}
