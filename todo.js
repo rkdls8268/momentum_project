@@ -4,8 +4,25 @@ const toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = 'toDos';
 
+function filterFn(toDo) {
+    return toDo.id === 1;
+}
+
 // todoList 는 여러 목록으로 이루어져 있으므로 배열에 저장
-const toDos = [];
+let toDos = [];
+
+function deleteTodo(event) {
+    const btn = event.target;
+    const li = btn.parentNode;
+    toDoList.removeChild(li);
+    // cleanToDos 와 filter가 하는 것은 function이 체크가 된 아이템들의 array를 주는 것
+    const cleanToDos = toDos.filter(function (toDo) {
+        // toDo.id는 숫자 li.id는 String임 <- 이런 실수 종종 일어나므로 주의!!!
+        return toDo.id !== parseInt(li.id);
+    });
+    toDos = cleanToDos; // old toDos를 새로 바뀐 todo list로 갱신해준다. 이때 재할당을 하므로 let으로 변수 타입 바꿔주기!
+    saveToDo(); // local storage에 저장해준다. 
+}
 
 function saveToDo() {
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
@@ -19,6 +36,10 @@ function paintToDo(text) {
     const newId = toDos.length + 1;
 
     delBtn.innerText = "❌";
+
+    // delBtn 누르면 삭제 처리되는 이벤트 추가
+    delBtn.addEventListener("click", deleteTodo);
+
     span.innerHTML = text;
 
     // span과 delBtn을 li 안에 넣기
