@@ -1,3 +1,5 @@
+const weather = document.querySelector(".js-weather");
+
 const API_KEY = "c1c00ef79cbffea261e6508335fa8b4d";
 
 const COORDS = 'coords'; // local storage key 값으로 저장되는 변수
@@ -8,7 +10,9 @@ function getWeather(lat, lon) {
     ).then(function (response) {
         return response.json();
     }).then(function (json) {
-        console.log(json);
+        const temp = json.main.temp;
+        const place = json.name;
+        weather.innerHTML = `${temp}°C @ ${place}`;
     })
 }
 
