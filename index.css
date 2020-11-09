@@ -1,32 +1,171 @@
 body {
-    background-color: #34495e;
-}
-
-.form,
-.greetings {
-    display: none;
-}
-
-.showing {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+  background-color: #34495e;
+  margin: 0;
+  color: white;
 }
 
 .bgImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    animation: fadeIn 0.5s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 0.5s linear;
+  opacity: 0.5;
+}
+
+.all {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.top-row {
+  height: 10%;
+  width: 100%;
+}
+
+.region-center-above {
+  height: 25%;
+  width: 100%;
+}
+
+.region-center {
+  height: 40%;
+  width: 100%;
+  text-align: middle;
+}
+
+.region-center-below {
+  height: 20%;
+  width: 100%;
+}
+
+.bottom-row {
+  height: 5%;
+  width: 100%;
+}
+
+.js-search {
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+.div-weather {
+  height: 100%;
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+.js-weather {
+  display: inline-block;
+  height: 100%;
+  padding: 1%;
+}
+
+.js-clock {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.js-title {
+  font-size: 7em;
+  vertical-align: middle; /*이거 왜 안먹냐..*/
+}
+
+/* .div-name-form {
+  height: 25%;
+  width: 100%;
+  text-align: center;
+} */
+
+/* 입력란 밑줄만 남기기 */
+input {
+  width: 30%;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  outline: none;
+  background: transparent;
+  font-weight: 500;
+  font-size: 120%;
+  line-height: 120%;
+}
+
+.js-greetings {
+  font-size: 2.5em;
+}
+
+.delBtn {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.fas .fa-times {
+  font-size: 36px; /*안 먹는 거 같음..*/
+}
+
+.div-toDoList {
+  text-align: center;
+  font-size: 2em;
+}
+
+.js-toDoForm {
+  text-align: center;
+}
+
+.js-toDoList {
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* .js-clock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.js-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 180px;
+  color: white;
+} */
+
+/* .blank {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+} */
+
+.form,
+.greetings {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
 }

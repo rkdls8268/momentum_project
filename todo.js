@@ -13,7 +13,8 @@ let toDos = [];
 
 function deleteTodo(event) {
     const btn = event.target;
-    const li = btn.parentNode;
+    console.log(btn); // 버튼이 button 엘리먼트 말고 i 엘리먼트로 잡힘
+    const li = btn.parentNode.parentNode;
     toDoList.removeChild(li);
     // cleanToDos 와 filter가 하는 것은 function이 체크가 된 아이템들의 array를 주는 것
     const cleanToDos = toDos.filter(function (toDo) {
@@ -32,10 +33,17 @@ function paintToDo(text) {
     const li = document.createElement("li");
     // element 생성하는 메소드
     const delBtn = document.createElement("button");
+    delBtn.className = "delBtn";
     const span = document.createElement("span");
     const newId = toDos.length + 1;
 
-    delBtn.innerText = "❌";
+    // delBtn.innerText = "❌";
+    const icon = document.createElement("i");
+    delBtn.appendChild(icon);
+    icon.classList.add("fas");
+    icon.classList.add("fa-times");
+
+    // <i class="fas fa-times"></i> <- x가 검은색이라 안보임.. // 색 바꿀 수 있음!
 
     // delBtn 누르면 삭제 처리되는 이벤트 추가
     delBtn.addEventListener("click", deleteTodo);
