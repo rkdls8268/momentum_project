@@ -2,6 +2,11 @@
 
 clone Google Chrome extension App "Momentum"
 
+✔️ use
+- HTML
+- CSS
+- Vanilla JS
+
 ✔️ Features
 
 - clock
